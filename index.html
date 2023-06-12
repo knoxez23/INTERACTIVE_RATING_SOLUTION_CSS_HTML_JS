@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Interactive Rating</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="logo">
+                <img src="images/icon-star.svg" alt="icon-star">
+            </div>
+
+            <div class="content">
+                <h1>How did we do?</h1>
+
+                <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+            </div>
+
+            <div class="numbers">
+                <div class="numberCircle">1</div>
+                <div class="numberCircle">2</div>
+                <div class="numberCircle">3</div>
+                <div class="numberCircle">4</div>
+                <div class="numberCircle">5</div>
+            </div>
+
+            <div class="button" onclick="openPage('thankYou.html')">SUBMIT</div>
+        </div>
+
+        <script>
+            const btns = document.querySelectorAll('.numberCircle');
+
+            btns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    btns.forEach((btn) => {
+                        btn.classList.remove('clicked');
+                    });
+                    btn.classList.add('clicked');
+                });
+            });
+
+            function openPage(pageUrl) {
+                window.open(pageUrl);
+            }
+
+
+        </script>
+    </main>
+</body>
+</html>
